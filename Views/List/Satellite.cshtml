@@ -1,0 +1,24 @@
+﻿@using satellites.Data.Models
+@model Satellites
+@{
+    Satellites satellite = ViewBag.Satellite;
+    IEnumerable<Planets> planets = ViewBag.Planets;
+    string atmos = "відсутня";
+}
+<div>
+    @if (satellite.atmosphere) atmos = "наявна";
+    <h1>@satellite.satellite_name</h1>
+    <h2>
+        @satellite.longnote
+    </h2>
+    <p></p>
+    <h1>Характеристики</h1>
+    <ol>
+        <h2>
+        <li>Дата відкриття: @satellite.discovery_date</li>
+        <li>Діаметр: @satellite.diameter км</li>
+        <li>Період обертання: @satellite.turnover_period земних діб</li>
+        <li>Атмосфера: @atmos</li>
+        </h2>
+    </ol>
+</div>

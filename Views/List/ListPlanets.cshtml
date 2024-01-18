@@ -1,0 +1,17 @@
+﻿@using satellites.Data.Models
+@model IEnumerable<Planets>
+@{
+}
+<div class="main1">
+@{
+    foreach (var planets in Model)
+    {
+        <div class="obj">
+                <div>
+                    <img width="100%" src="@planets.img" alt="@planets.planet_name" />
+                    <p align="center"><a class="btns objbtn" href="/List/Planet/@planets.planet_id">@planets.planet_name</a></p>
+                </div>
+        </div>
+    }
+}
+</div>

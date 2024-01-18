@@ -1,0 +1,26 @@
+﻿@using satellites.Data.Models
+@model IEnumerable<Satellites>
+@{
+    Planets planet = ViewBag.Planet;
+}
+<div>
+    <h1>@planet.planet_name</h1>
+    <h2>
+        @planet.note
+    </h2>
+    <p></p>
+    <h1>Супутники</h1>
+    <h2>
+        <ol>
+            @{
+                foreach (var satellites in Model)
+                {
+                    if (satellites.planet_id.planet_id == planet.planet_id)
+                    {
+                        <li><a href="/List/Satellite/@satellites.satellite_id">@satellites.satellite_name</a></li>
+                    }
+                }
+            }
+        </ol>
+    </h2>
+</div>
